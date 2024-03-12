@@ -1,0 +1,36 @@
+body {
+  background-color: #F1F1D3;
+}
+
+h1 {
+  color: #F1F1D3;
+  background-color: #7DC2A5;
+}
+
+ul {
+  border: 1px solid #7DC2A5;
+}
+
+ul li {
+  border-bottom: 1px solid #7DC2A5;
+}
+
+button {
+  background-color: #F1F1D3;
+  border: 2px solid #7DC2A5;
+}
+
+button:hover {
+  background-color: #7DC2A5;
+  color: #F1F1D3;
+}
+
+#note-area {
+  border: 2px solid #7DC2A5;
+  background-color: #E3EBD0;
+}
+
+#store-area {
+  border: 2px solid #999894;
+  background-color: #e3e6df;
+}

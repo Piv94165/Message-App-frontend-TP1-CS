@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>repl.it</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="styles/colors.css" type="text/css" />
+    <link rel="stylesheet" href="styles/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
+  </head>
+
+  <body>
+    <input
+      id="store-area"
+      placeholder="path to find messages"
+    ></input>
+    <h1>My notes</h1>
+    <ul id="notes-list">
+      <li>Hello World</li>
+      <li>Blah Blah</li>
+      <li>I love cats</li>
+    </ul>
+    <br />
+    <textarea id="note-area" placeholder="Your new note"></textarea>
+    <br />
+    <button id="add-note-button" onclick="addNote()">Add note</button>
+    <script src="script.js"></script>
+    <script src="closeButton.js"></script>
+  </body>
+</html>
