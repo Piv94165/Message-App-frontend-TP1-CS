@@ -1,38 +1,22 @@
-function fact(n) {
-  if (n === 1) {
-    return 1;
-  }
-  return n * fact(n - 1);
-}
-
-function applique(f, tab) {
-  return tab.map(f);
-}
-
-console.log(fact(6));
-console.log(applique(fact, [1, 2, 3, 4, 5, 6]));
-console.log(
-  applique(
-    function (n) {
-      return n + 1;
-    },
-    [1, 2, 3, 4, 5, 6],
-  ),
-);
-
-let pathToMsgs =
+let baseUrl =
   "https://95764c3a-e7a3-4cf1-84a4-be939c87c2bf-00-ycc4gkid4zal.worf.replit.dev/";
 msgs = [{ msg: "Hello World" }, { msg: "Blah Blah" }, { msg: "I love cats" }];
 
-function getPathToMsgs() {
-  path = document.getElementById("store-area").value;
+function getBaseUrl() {
+  path = document.getElementById("store-input").value;
   if (path !== "") {
-    pathToMsgs = path;
-    if (!pathToMsgs.endsWith("/")) {
-      pathToMsgs += "/";
+    baseUrl = path;
+    if (!baseUrl.endsWith("/")) {
+      baseUrl += "/";
     }
   }
-  console.log("path = ", pathToMsgs, " END");
+  getRemoteMessages();
+}
+
+function deleteMessage(index) {
+  fetch(baseUrl + "msg/del/" + index).then(function (response) {
+    return response.json();
+  });
 }
 
 function update(newNotes) {
@@ -41,16 +25,24 @@ function update(newNotes) {
   newNotes.forEach(function (element) {
     const li = document.createElement("li");
     li.textContent = element.msg;
+    let deleteButton = document.createElement("button");
+    deleteButton.className = "small-button delete-button";
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", function () {
+      // Supprimer l'élément de la liste lorsqu'on clique sur le bouton "Supprimer"
+      deleteMessage(msgs.indexOf(element));
+      li.remove();
+    });
+    li.appendChild(deleteButton);
     list.appendChild(li);
   });
 }
 
 function addNote() {
-  getPathToMsgs();
   const noteArea = document.getElementById("note-area");
   const newNote = noteArea.value;
   if (newNote !== "") {
-    fetch(pathToMsgs + "msg/post/" + escape(newNote))
+    fetch(baseUrl + "msg/post/" + escape(newNote))
       .then(function (response) {
         return response.json();
       })
@@ -68,7 +60,7 @@ function addNote() {
 }
 
 function getRemoteMessages() {
-  fetch(pathToMsgs + "msg/getAll")
+  fetch(baseUrl + "msg/getAll")
     .then(function (response) {
       return response.json();
     })

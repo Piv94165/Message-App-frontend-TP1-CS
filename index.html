@@ -11,10 +11,13 @@
   </head>
 
   <body>
-    <input
-      id="store-area"
-      placeholder="path to find messages"
-    ></input>
+    <div class="path-area">
+        <input
+          id="store-input"
+          placeholder="path to find messages"
+        ></input>
+        <button class="small-button" onclick="getBaseUrl()">Change url</button>
+    </div>
     <h1>My notes</h1>
     <ul id="notes-list">
       <li>Hello World</li>
@@ -26,6 +29,6 @@
     <br />
     <button id="add-note-button" onclick="addNote()">Add note</button>
     <script src="script.js"></script>
-    <script src="closeButton.js"></script>
+    <script src="deleteButton.js"></script>
   </body>
 </html>

@@ -15,12 +15,22 @@ ul li {
   border-bottom: 1px solid #7DC2A5;
 }
 
-button {
+.small-button {
+  background-color: #7DC2A5;
+  color: #F1F1D3;
+}
+
+.small-button:hover{
+  background-color: #F1F1D3;
+  color: #7DC2A5;
+}
+
+#add-note-button {
   background-color: #F1F1D3;
   border: 2px solid #7DC2A5;
 }
 
-button:hover {
+#add-note-button:hover {
   background-color: #7DC2A5;
   color: #F1F1D3;
 }
