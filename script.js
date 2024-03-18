@@ -1,5 +1,6 @@
-let baseUrl =
-  "https://95764c3a-e7a3-4cf1-84a4-be939c87c2bf-00-ycc4gkid4zal.worf.replit.dev/";
+// let baseUrl =
+//   "https://95764c3a-e7a3-4cf1-84a4-be939c87c2bf-00-ycc4gkid4zal.worf.replit.dev/";
+let baseUrl = "https://tp-archi-app-partie-2-camille-1.onrender.com/";
 msgs = [{ msg: "Hello World" }, { msg: "Blah Blah" }, { msg: "I love cats" }];
 
 function getBaseUrl() {
